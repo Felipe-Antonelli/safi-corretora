@@ -22,8 +22,8 @@ export const site = {
 
   // Os dois WhatsApp da SAFI. O primeiro é o principal (botão flutuante).
   whatsapps: [
-    { rotulo: "(41) 99967-1180", numero: "5541999671180" },
     { rotulo: "(41) 99954-4671", numero: "5541999544671" },
+    { rotulo: "(41) 99967-1180", numero: "5541999671180" },
   ],
 
   email: "saficorretoradeseguros@gmail.com",
