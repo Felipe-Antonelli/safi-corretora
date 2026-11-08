@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Compensa o header fixo ao navegar por âncoras (#cotacao etc.) */
+  [id] {
+    scroll-margin-top: 6rem;
+  }
+
+  body {
+    @apply bg-white font-sans text-safi-navy antialiased;
+    overflow-x: hidden;
+  }
+
+  /* Foco visível e consistente em toda a navegação por teclado */
+  :focus-visible {
+    @apply outline-none ring-2 ring-safi-orange ring-offset-2 ring-offset-white;
+  }
+
+  .bg-safi-navy :focus-visible,
+  .bg-safi-navyDeep :focus-visible,
+  .escuro :focus-visible {
+    @apply ring-offset-safi-navy;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Container centralizado com largura máxima de 1280px */
+  .container-safi {
+    @apply mx-auto w-full max-w-site px-4 sm:px-6 lg:px-8;
+  }
+
+  .secao {
+    @apply py-16 sm:py-20 lg:py-24;
+  }
+
+  /* Botões — texto azul-marinho sobre laranja garante contraste AA */
+  .btn {
+    @apply inline-flex min-h-[48px] items-center justify-center gap-2 rounded-xl px-6 py-3 text-base font-bold transition-colors duration-200;
+  }
+
+  .btn-primario {
+    @apply btn bg-safi-orange text-safi-navy shadow-soft hover:bg-safi-orangeHover;
+  }
+
+  .btn-contorno-branco {
+    @apply btn border-2 border-white/80 text-white hover:border-safi-orange hover:bg-white/5 hover:text-safi-orange;
+  }
+
+  .btn-contorno-azul {
+    @apply btn border-2 border-safi-navy text-safi-navy hover:bg-safi-navy hover:text-white;
+  }
+
+  .btn-whatsapp {
+    @apply btn bg-[#177A41] text-white hover:bg-[#12643A];
+  }
+
+  .campo {
+    @apply mt-1.5 block min-h-[48px] w-full rounded-xl border border-slate-300 bg-white px-4 py-3 text-base text-safi-navy placeholder:text-slate-400 focus:border-safi-orange focus:outline-none focus:ring-2 focus:ring-safi-orange/30;
+  }
+
+  /* Esconde a barra de rolagem nos carrosséis horizontais */
+  .sem-scrollbar {
+    scrollbar-width: none;
+  }
+  .sem-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Fundo escuro com brilho sutil, inspirado no cartão de visita */
+  .fundo-escuro {
+    background-color: theme("colors.safi.navy");
+    background-image:
+      radial-gradient(60% 80% at 15% 30%, rgba(248, 112, 18, 0.14) 0%, transparent 60%),
+      radial-gradient(50% 60% at 90% 10%, rgba(255, 255, 255, 0.06) 0%, transparent 60%),
+      linear-gradient(160deg, theme("colors.safi.navy") 0%, theme("colors.safi.navyDeep") 100%);
+  }
+}
