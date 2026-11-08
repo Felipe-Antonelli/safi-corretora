@@ -2,7 +2,6 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
-import { TopBar } from "@/components/TopBar";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -37,12 +36,12 @@ const jsonLd = {
   slogan: site.slogan,
   description: site.descricao,
   url: site.url,
-  logo: `${site.url}/logo.svg`,
+  logo: `${site.url}/logo.png`,
   image: `${site.url}/opengraph-image`,
   email: site.email,
   telephone: site.whatsapps.map((w) => `+${w.numero}`),
   sameAs: [site.instagram.url],
-  address: { "@type": "PostalAddress", addressLocality: site.endereco.cidade, addressRegion: site.endereco.uf, addressCountry: "BR" },
+  address: { "@type": "PostalAddress", streetAddress: site.endereco.logradouro, postalCode: site.endereco.cep, addressLocality: site.endereco.cidade, addressRegion: site.endereco.uf, addressCountry: "BR" },
   areaServed: { "@type": "City", name: "Curitiba – PR" },
   contactPoint: site.whatsapps.map((w) => ({
     "@type": "ContactPoint", telephone: `+${w.numero}`, contactType: "customer service", availableLanguage: "Portuguese",
@@ -56,7 +55,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <a href="#conteudo" className="sr-only z-[60] rounded-xl bg-safi-orange px-4 py-3 font-bold text-safi-navy focus:not-sr-only focus:fixed focus:left-4 focus:top-4">
           Pular para o conteúdo
         </a>
-        <TopBar />
         <Header />
         <main id="conteudo" tabIndex={-1} className="outline-none">{children}</main>
         <Footer />

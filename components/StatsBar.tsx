@@ -12,7 +12,7 @@ export function StatsBar() {
   ];
 
   return (
-    <section aria-label="A SAFI em números" className="escuro border-t border-safi-orange/40 bg-safi-navyDeep">
+    <section id="numeros" aria-label="A SAFI em números" className="escuro scroll-mt-[4.5rem] border-t border-safi-orange/40 bg-safi-navyDeep">
       <ul className="container-safi grid grid-cols-2 gap-y-8 py-10 lg:grid-cols-4 lg:py-12">
         {numeros.map((n, i) => (
           <li

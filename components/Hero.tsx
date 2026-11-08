@@ -1,8 +1,9 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { site, linkWhatsApp, mensagemPadraoWhatsApp } from "@/data/site";
 import { WhatsAppIcon } from "./icons/Brand";
 import { Shield } from "./Shield";
+import { EscudoSafi } from "./EscudoSafi";
 
 /**
  * Hero escuro inspirado no cartão de visita:
@@ -11,21 +12,29 @@ import { Shield } from "./Shield";
  */
 export function Hero() {
   return (
-    <section aria-labelledby="hero-titulo" className="escuro fundo-escuro relative overflow-hidden">
-      {/* Marca d'água do escudo */}
+    <section
+      aria-labelledby="hero-titulo"
+      className="escuro fundo-escuro relative flex min-h-[calc(100svh-4.5rem)] flex-col overflow-hidden"
+    >
+      {/* Marca d'água: silhueta do escudo SAFI */}
       <Shield
         variant="watermark"
-        className="pointer-events-none absolute -right-24 top-1/2 h-[140%] w-auto -translate-y-1/2 text-white/[0.035]"
+        className="pointer-events-none absolute -right-32 top-1/2 h-[125%] w-auto -translate-y-1/2 text-white/[0.025]"
+      />
+      {/* Brilho laranja suave atrás do escudo */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-40 top-1/2 h-[42rem] w-[42rem] -translate-y-1/2 rounded-full bg-safi-orange/10 blur-[120px]"
       />
 
-      <div className="container-safi relative grid items-center gap-10 py-14 sm:py-20 lg:grid-cols-[5fr_7fr] lg:gap-16 lg:py-28">
+      <div className="container-safi relative grid flex-1 items-center gap-10 py-12 sm:py-16 lg:grid-cols-[5fr_7fr] lg:gap-20 lg:py-20">
         {/* Escudo em destaque */}
-        <div className="relative mx-auto flex w-40 justify-center sm:w-52 lg:w-full lg:max-w-sm">
-          <div aria-hidden="true" className="absolute inset-[12%] rounded-full bg-safi-orange/30 blur-3xl" />
-          <Shield
-            id="hero-escudo"
-            title="Escudo SAFI"
-            className="relative w-full drop-shadow-[0_24px_40px_rgba(0,0,0,0.45)] motion-safe:animate-float"
+        <div className="relative mx-auto flex w-36 justify-center sm:w-48 lg:w-full lg:max-w-[22rem]">
+          <div aria-hidden="true" className="absolute inset-[18%] rounded-full bg-safi-orange/25 blur-3xl" />
+          <EscudoSafi
+            tom="claro"
+            title="Escudo da SAFI Corretora de Seguros"
+            className="relative h-auto w-full drop-shadow-[0_24px_40px_rgba(0,0,0,0.5)] motion-safe:animate-float"
           />
         </div>
 
@@ -61,6 +70,16 @@ export function Hero() {
           </div>
         </div>
       </div>
+
+      {/* Convite para rolar */}
+      <a
+        href="#numeros"
+        aria-label="Rolar para ver mais"
+        className="relative mx-auto mb-6 hidden flex-col items-center gap-1 text-xs font-semibold uppercase tracking-[0.25em] text-white/50 transition-colors hover:text-safi-orange sm:flex"
+      >
+        Conheça a SAFI
+        <ChevronDown className="h-5 w-5 motion-safe:animate-bounce" aria-hidden="true" />
+      </a>
     </section>
   );
 }

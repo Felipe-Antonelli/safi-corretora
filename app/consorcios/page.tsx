@@ -30,7 +30,11 @@ export default function ConsorciosPage() {
           <ul className="mx-auto mt-10 grid max-w-xl grid-cols-2 gap-6">
             {administradorasConsorcio.map((a) => (
               <li key={a.nome} className="flex h-28 items-center justify-center rounded-xl border border-slate-200 p-4">
-                <Image src={a.logo} alt={a.nome} width={180} height={64} unoptimized={a.logo.endsWith(".svg")} className="h-auto max-h-16 w-full object-contain" />
+                {a.logo ? (
+                  <Image src={a.logo} alt={a.nome} width={180} height={64} unoptimized={a.logo.endsWith(".svg")} className="h-auto max-h-16 w-auto max-w-full object-contain" />
+                ) : (
+                  <span className="text-center font-display text-lg font-extrabold text-safi-navy">{a.nome.replace(/^Consórcio\s+/, "")}</span>
+                )}
               </li>
             ))}
           </ul>

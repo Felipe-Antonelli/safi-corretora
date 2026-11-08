@@ -1,7 +1,7 @@
 /**
  * ============================================================
  *  DADOS GERAIS DA SAFI — edite aqui contatos, textos e números.
- *  Tudo o que aparece no site (top bar, rodapé, botões de
+ *  Tudo o que aparece no site (cabeçalho, rodapé, botões de
  *  WhatsApp, JSON-LD, etc.) é lido deste arquivo.
  * ============================================================
  */
@@ -30,18 +30,25 @@ export const site = {
 
   // Somente Instagram (não há outras redes sociais).
   instagram: {
-    usuario: "@safi.seguros",
-    url: "https://instagram.com/safi.seguros",
+    usuario: "@safi_seguros",
+    url: "https://www.instagram.com/safi_seguros/",
   },
 
   endereco: {
-    logradouro: "Endereço a definir", // PLACEHOLDER — preencha o endereço completo
+    logradouro: "R. Cel. Pretextato Pena Forte Taborda Ribas, 1955 – Portão", // conforme o perfil no Google
     cidade: "Curitiba",
     uf: "PR",
-    cep: "", // PLACEHOLDER
+    cep: "80330-080",
   },
 
-  cnpj: "00.000.000/0000-00", // PLACEHOLDER — preencha o CNPJ real
+  cnpj: "56.212.758/0001-48",
+
+  // Perfil da SAFI no Google (avaliações)
+  google: {
+    url: "https://share.google/egQVYH7ygblMGOqyo",
+    nota: "5,0",
+    totalAvaliacoes: 18,
+  },
 
   // Números exibidos na faixa de estatísticas e no "Quem Somos"
   numeros: {

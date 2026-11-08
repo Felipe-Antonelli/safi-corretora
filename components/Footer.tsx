@@ -19,7 +19,7 @@ export function Footer() {
       <div className="container-safi relative grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-12 lg:gap-8">
         {/* Marca */}
         <div className="lg:col-span-4">
-          <Logo id="footer-escudo" />
+          <Logo />
           <p className="mt-5 font-display text-lg font-bold text-white">{site.slogan}</p>
           <p className="mt-1 italic text-safi-orange">{site.sloganSecundario}</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">

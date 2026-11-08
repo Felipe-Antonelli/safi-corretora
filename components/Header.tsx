@@ -33,7 +33,7 @@ export function Header() {
       }`}
     >
       <div className="container-safi flex h-[4.5rem] items-center justify-between gap-6">
-        <Logo id="header-escudo" />
+        <Logo priority />
 
         <nav aria-label="Menu principal" className="hidden lg:block">
           <ul className="flex items-center gap-1">
